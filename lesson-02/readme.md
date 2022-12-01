@@ -40,6 +40,8 @@
 
 ### bitwise operators
 
-## printing
+## printing & user interactions
 
 ### console, alert, confirm, prompt
+
+## bitwise operators
