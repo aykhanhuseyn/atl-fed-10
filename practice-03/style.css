@@ -1,0 +1,23 @@
+#id {
+  color: red;
+}
+
+.class {
+  border: 1px solid red;
+}
+
+div {
+  color: purple;
+}
+
+:not(div) {
+  color: blue;
+}
+
+:root {
+  background-color: red;
+}
+
+::after {
+  color: rebeccapurple;
+}
