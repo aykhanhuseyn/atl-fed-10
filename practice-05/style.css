@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 200px;
+  height: 50px;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.navlist {
+  display: flex;
+  list-style-type: none;
+}
+
+.navlist a {
+  margin-right: 25px;
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+}
+
+.navlist a .altmenu:hover .hiddenmenu {
+  visibility: visible;
+}
+
+.hiddenmenu {
+  text-decoration: none;
+  list-style-type: none;
+  visibility: hidden;
+}
+
+.icon-list {
+  display: flex;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.fa-regular {
+  margin-right: 25px;
+}
+.fa-solid {
+  margin-right: 25px;
+}
