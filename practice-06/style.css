@@ -1,0 +1,128 @@
+:root {
+	--baseColor: #574b90;
+	--secondColor: #eee3f4;
+	--purple-darken: #3d3575;
+	--status-online: #66bb6a;
+	--status-onbreak: #ffa726;
+	--status-ofline: #bdbdbd;
+	--white: #fafafa;
+}
+
+/* tooltip */
+[data-tooltip] {
+	position: relative;
+}
+[data-tooltip]::after {
+	position: absolute;
+	left: 95%;
+	top: 50%;
+	transform: translateY(-50%);
+	content: attr(data-tooltip);
+	opacity: 0;
+	padding: 8px 12px;
+	border-radius: 4px;
+	background-color: var(--secondColor);
+	color: var(--baseColor);
+	min-width: 6rem;
+	transition: 0.2s;
+	pointer-events: none;
+}
+[data-tooltip]:hover::after {
+	opacity: 1;
+	pointer-events: all;
+}
+
+[data-popover-target] {
+	position: relative;
+}
+[data-popover-element] {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+	background-color: var(--baseColor);
+	padding: 12px 16px;
+	border-radius: 8px;
+}
+[data-popover-element].visible {
+	opacity: 1;
+	pointer-events: all;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.base {
+	background-color: var(--baseColor);
+	border-right: 1px solid red;
+}
+
+.logo {
+	padding: 32px 16px;
+}
+
+.logo > img {
+	width: 52px;
+	height: 52px;
+}
+
+.profile {
+	padding: 16px;
+	position: relative;
+}
+.profile > .photo {
+	width: 52px;
+	height: 52px;
+	border-radius: 26px;
+	overflow: hidden;
+}
+.profile > .photo > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.profile > .status {
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	border: 2px solid var(--baseColor);
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+}
+[data-status='online'] {
+	background-color: var(--status-online);
+}
+[data-status='onbreak'] {
+	background-color: var(--status-onbreak);
+}
+[data-status='ofline'] {
+	background-color: var(--status-ofline);
+}
+.profile > .status:hover {
+	background-image: url('./assets/chevron-down.svg');
+	background-position: center;
+	background-color: var(--white);
+}
+
+.divider {
+	height: 1px;
+	background-color: var(--purple-darken);
+}
+
+.secondary {
+	background-color: var(--baseColor);
+	flex-basis: 300px;
+}
+
+.main {
+	height: 100vh;
+	height: -webkit-fill-available;
+}
