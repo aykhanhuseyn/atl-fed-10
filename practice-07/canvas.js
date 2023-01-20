@@ -8,6 +8,12 @@ class Canvas {
 
 	static init() {
 		const canvas = document.getElementById('canvas');
+		document.body.style.width = '100%';
+		document.body.style.height = '100vh';
+		document.body.style.overflow = 'hidden';
+
+		canvas.width = Canvas.width;
+		canvas.height = Canvas.height;
 		canvas.style.width = Canvas.width + 'px';
 		canvas.style.height = Canvas.height + 'px';
 		canvas.style.backgroundColor = '#333333';
@@ -20,13 +26,20 @@ class Canvas {
 		snake.draw();
 		fruit.draw();
 
-		setInterval(() => {
+		const interval = setInterval(() => {
 			context.clearRect(0, 0, Canvas.width, Canvas.height);
-			snake.move();
-			snake.eat(fruit);
-			fruit.draw();
-			snake.draw();
-		}, 250);
+			const canMove = snake.move();
+			if (canMove) {
+				snake.eat(fruit);
+				fruit.draw();
+				snake.draw();
+			} else {
+				clearInterval(interval);
+				Canvas.context.fillStyle = 'red';
+				Canvas.context.font = '50px serif';
+				Canvas.context.fillText('You lost', 150, 150);
+			}
+		}, 150);
 
 		document.addEventListener('keydown', (event) => {
 			const dir = event.key.replace('Arrow', ''); // Up, Down

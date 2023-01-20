@@ -1,11 +1,28 @@
 class Snake {
 	#x = 0;
 	#y = 0;
-	#xSpeed = Canvas.cell; // 1 saga, -1 sola
-	#ySpeed = 0; // -1 yuxari, 1 asagi
+	#xSpeed = Canvas.cell;
+	#ySpeed = 0;
 	#color = '#24b6ff';
+	#tail = [];
+	#total = 0;
 
 	move() {
+		this.#tail.unshift({ x: this.#x, y: this.#y });
+		this.#tail.length = this.#total;
+
+		if (
+			this.#tail
+				.slice(1)
+				.find(
+					(coords) =>
+						coords.x === this.#x + this.#xSpeed &&
+						coords.y === this.#y + this.#ySpeed,
+				)
+		) {
+			return false;
+		}
+
 		this.#x += this.#xSpeed;
 		this.#y += this.#ySpeed;
 
@@ -21,11 +38,19 @@ class Snake {
 		if (this.#y < 0) {
 			this.#y = Canvas.height;
 		}
+
+		return true;
 	}
 
 	draw() {
 		Canvas.context.fillStyle = this.#color;
-		Canvas.context.fillRect(this.#x, this.#y, 10, 10);
+		Canvas.context.fillRect(this.#x, this.#y, Canvas.cell, Canvas.cell);
+		if (this.#total) {
+			for (let i = 0; i < this.#tail.length; i++) {
+				const { x, y } = this.#tail[i];
+				Canvas.context.fillRect(x, y, Canvas.cell, Canvas.cell);
+			}
+		}
 	}
 
 	// Up, Right, Down, Left
@@ -56,6 +81,8 @@ class Snake {
 		if (fruit.x === this.#x && fruit.y === this.#y) {
 			fruit.move();
 			fruit.draw();
+
+			this.#total++;
 		}
 	}
 }
