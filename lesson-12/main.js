@@ -38,9 +38,12 @@ personClone.name; // Ali;
 
 // this is inheritance
 // not cloning
-// const realPersonClone = Object.create(person);
+const realPersonClone = Object.create(person);
 
 const realPersonCloneSpread = { ...person };
+// { }
+// { ...person }
+// { name: person.name, age: presin.age, referance: person.referance, ... }
 
 person === realPersonCloneSpread; // false
 Object.is(person, realPersonCloneSpread); // false
