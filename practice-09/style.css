@@ -1,0 +1,48 @@
+#backdrop {
+	background-color: #33333333;
+	position: fixed;
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s;
+}
+#backdrop.open {
+	opacity: 1;
+	pointer-events: all;
+}
+#cart {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -500px;
+	width: 500px;
+	/* background-color: #fefefe; */
+	background-color: red;
+	transition: all 0.3s;
+}
+#cart.open {
+	right: 0;
+}
+
+#product-list {
+	display: flex;
+	gap: 20px;
+	background-color: #1843745d;
+	border-radius: 4px;
+	padding: 4px;
+	list-style: none;
+	width: 100%;
+	overflow-x: auto;
+}
+#product-list > li {
+	padding: 8px;
+	background-color: #9e65a55d;
+}
+#product-list > li .footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: -30px;
+	margin-bottom: 20px;
+	padding: 12px;
+}
