@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Storage</title>
+	</head>
+	<body>
+		<main>
+			<button id="decrement">decrement</button>
+			<h1 id="count">0</h1>
+			<button id="increment">increment</button>
+		</main>
+		<h2>
+			<a href="./count.html">go to count</a>
+		</h2>
+		<style>
+			main {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 24px;
+			}
+			button {
+				padding: 8px 12px;
+				background-color: rgb(0, 158, 105);
+				color: azure;
+				border: none;
+				border-radius: 4px;
+				font-size: 20px;
+			}
+			#count {
+				font-size: 2rem;
+			}
+		</style>
+		<script>
+			const decrement = document.getElementById('decrement');
+			const increment = document.getElementById('increment');
+			const count = document.getElementById('count');
+
+			count.innerHTML = localStorage.getItem('count');
+
+			// classic func
+			// function name(params) {
+			// }
+			// arrow func
+			// const name = (params) => {
+			// }
+
+			decrement.addEventListener('click', function (event) {
+				if (event.altKey) {
+					count.innerHTML = count.innerHTML - 10;
+				} else {
+					count.innerHTML = count.innerHTML - 1;
+				}
+				localStorage.setItem('count', count.innerHTML);
+			});
+			increment.addEventListener('click', (event) => {
+				if (event.altKey) {
+					count.innerHTML = Number(count.innerHTML) + 10;
+				} else {
+					count.innerHTML = Number(count.innerHTML) + 1;
+				}
+				localStorage.setItem('count', count.innerHTML);
+			});
+		</script>
+		<script>
+			const mrPresident = {
+				id: 'hash',
+				title: 'Mr.',
+				name: 'Barak',
+				surname: 'Obama',
+				mail: 'barak.obama@whitehouse.gov',
+			};
+
+			localStorage.setItem('president', JSON.stringify(mrPresident));
+			// localStorage.setItem('president', mrPresident);
+			// localStorage.setItem();
+		</script>
+		<script src="./main.js"></script>
+	</body>
+</html>

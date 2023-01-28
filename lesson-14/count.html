@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>count</title>
+	</head>
+	<body>
+		<h1>Count: <span>0</span></h1>
+		<script>
+			document.querySelector('span').innerHTML =
+				localStorage.getItem('count') ?? 0;
+		</script>
+		<h2>
+			<a href="./index.html">go home</a>
+		</h2>
+		<h3>Mr. presirent Barak Obama</h3>
+		<p>emil</p>
+		<script>
+			const rawPresident = localStorage.getItem('president');
+			const president = JSON.parse(rawPresident);
+
+			if (president) {
+				document.querySelector(
+					'h3',
+				).innerHTML = `${president.title} president ${president.name} ${president.surname}`;
+				document.querySelector('p').innerHTML = president.mail;
+			}
+		</script>
+	</body>
+</html>

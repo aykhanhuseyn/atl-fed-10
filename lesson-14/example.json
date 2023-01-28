@@ -1,0 +1,10 @@
+{
+	"name": "John",
+	"age": 25,
+	"isAdmin": true,
+	"nestedObject": {
+		"id": 1,
+		"isRealMan": false,
+		"isDezertir": true
+	}
+}
