@@ -97,6 +97,24 @@ interface P {
 // const o1: Order<P> = {
 // }
 
-type x = Exclude<string|number, number>;
+type x = Exclude<string|number|boolean, number>;
 
-type y = Extract<string|number, number>;
+type y = Extract<string|number|boolean, number>;
+
+// interface extends, implements
+
+interface Runnable {
+	run(): void;
+}
+interface Flyable {
+	fly(): void;
+}
+
+class Bird implements Runnable, Flyable {
+	run() {
+		console.log('run');
+	}
+	fly() {
+		console.log('fly');
+	}
+}
