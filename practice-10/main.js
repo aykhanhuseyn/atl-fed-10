@@ -47,7 +47,7 @@ const products = [
 // 	 count: number,
 // }
 // CartItem[]
-const cartList = [];
+const cartList = JSON.parse(localStorage.getItem('cartList')) ?? [];
 
 // fill the list with products
 products.forEach((item) => {
@@ -79,6 +79,7 @@ productList.addEventListener('click', (event) => {
 			// else add the product to the cart
 			cartList.push({ id, count: 1 });
 		}
+		localStorage.setItem('cartList', JSON.stringify(cartList));
 	}
 });
 
