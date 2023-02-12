@@ -4,7 +4,7 @@
 // const _ = require('lodash');
 // _.map([1, 2, 3, 4, 5], (item) => item * 2);
 
-const { map, find, clone, cloneDeep } = require('lodash');
+const { map, find, clone, cloneDeep, filter } = require('lodash');
 
 const arr = [1, 2, 3, 4, 5];
 const arr2 = {};
@@ -82,3 +82,27 @@ const cloneDeepGeydirme = (obj) => JSON.parse(JSON.stringify(obj));
 const obj5 = cloneDeepGeydirme(obj);
 
 console.log({ obj, obj4, obj5 });
+
+const movies = [
+	{
+		id: 1,
+		title: 'The Shawshank Redemption',
+		year: 1994,
+		genres: {
+			id: 1,
+			name: 'Drama',
+		},
+	},
+	{
+		id: 2,
+		title: 'The Godfather',
+		year: 1972,
+		genres: {
+			id: 2,
+			name: 'Love',
+		},
+	},
+];
+
+const found = filter(movies, { genres: { name: 'Drama' } });
+console.log('found', found);
