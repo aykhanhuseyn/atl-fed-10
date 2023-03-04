@@ -33,9 +33,10 @@ function App() {
 			>
 				{asc ? 'Ascending' : 'Descending'}
 			</button>
-			{/* {array.map((item, index) => (
-				<Card name={item.name} key={index} />
-			))} */}
+			{array.map((item, index) => {
+				return <Card name={item.name} key={index} />;
+			})}
+
 			{/* {array.map((item) => (
 				<Card name={item.name} key={item.id} />
 			))} */}
