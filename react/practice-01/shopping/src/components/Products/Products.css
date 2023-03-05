@@ -1,0 +1,13 @@
+.products {
+}
+
+.products__title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.products__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 60px;
+}
