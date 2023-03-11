@@ -1,0 +1,9 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(225deg, #5596ff 0%, #ac2deb 100%);
+}

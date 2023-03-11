@@ -1,0 +1,30 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__title {
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 40px;
+	letter-spacing: 15px;
+	color: #ffffff;
+}
+
+.header__button {
+	width: 40px;
+	height: 40px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	place-items: center;
+}
+
+.header__image {
+	width: 26px;
+	height: 26px;
+}

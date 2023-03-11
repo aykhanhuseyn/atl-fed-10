@@ -1,0 +1,28 @@
+.create {
+	position: relative;
+}
+
+.create__checkbox {
+	position: absolute;
+	top: 14px;
+	left: 24px;
+	cursor: pointer;
+}
+
+.create__input {
+	background: #ffffff;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+	padding: 20px 24px 20px 72px;
+	width: 100%;
+
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+	letter-spacing: -0.25px;
+	color: #494c6b;
+}
+.create__input::placeholder {
+	color: #9495a5;
+}
