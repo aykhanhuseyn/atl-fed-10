@@ -18,6 +18,11 @@ interface Task {
 	statusId: string;
 }
 
+interface Data {
+	boards: Board[];
+	tasks: Task[];
+}
+
 // preserve at local storage
 
 const data = {
