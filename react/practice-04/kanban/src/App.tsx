@@ -1,22 +1,10 @@
 import { RouterProvider } from 'react-router-dom';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { useAppDispatch, useAppSelector, toggleTheme } from './redux';
-import { ThemeMode } from './constants/colors';
+import { GlobalStyle } from './components/GlobalStyles';
 import { Button } from './components/Button';
+import { ThemeMode } from './constants/colors';
 import { router } from './router';
-
-const GlobalStyle = createGlobalStyle`
-	*, *::before, *::after {
-		box-sizing: border-box;
-	}
-	body {
-		margin: 0;
-		padding: 0;
-		font-family: 'Roboto', sans-serif;
-		background-color: ${(props) => props.theme.bg};
-		color: ${(props) => props.theme.color};
-	}
-`;
 
 function App() {
 	const dispatch = useAppDispatch();
@@ -26,6 +14,8 @@ function App() {
 		<ThemeProvider theme={mode === ThemeMode.DARK ? dark : light}>
 			<GlobalStyle />
 			<Button
+				kind='secondary'
+				size='L'
 				onClick={() => {
 					dispatch(toggleTheme());
 				}}
