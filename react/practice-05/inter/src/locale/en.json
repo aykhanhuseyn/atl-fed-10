@@ -1,0 +1,11 @@
+{
+	"common": {
+		"welcome": "Welcome to React and react-i18next",
+		"clangeLang": "Change Language"
+	},
+	"login": {
+		"login": "Login",
+		"email": "Email",
+		"password": "Password"
+	}
+}

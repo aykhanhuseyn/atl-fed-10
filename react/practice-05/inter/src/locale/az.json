@@ -1,0 +1,11 @@
+{
+	"common": {
+		"welcome": "Reacta və react-i18nextə xoş gəlmisiniz",
+		"clangeLang": "Dili dəyişdir"
+	},
+	"login": {
+		"login": "Daxil ol",
+		"email": "E-poçt",
+		"password": "Şifrə"
+	}
+}
