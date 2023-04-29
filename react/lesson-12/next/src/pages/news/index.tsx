@@ -8,6 +8,14 @@ export const getServerSideProps = async () => {
 	return { props: { news } };
 };
 
+export const getStaticProps = async () => {};
+
+const slags = ['news-1', 'news-2', 'news-3'];
+export const getStaticPaths = async () => {
+	const paths = slags.map((slag) => ({ params: { slag } }));
+	return { paths };
+};
+
 type Props = {
 	news: News[];
 };
